@@ -1,6 +1,6 @@
 body {
   background-color: #ffffff;
-  background-image: url('../../image/bg/bg-l-2.jpg'); /* Replace with your image path */
+  background-image: url('../../image/bg/bg-l.jpeg'); /* Replace with your image path */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -9,14 +9,16 @@ body {
 
 h1 {
   font-size: 1.5em;
-  color: rgb(223, 206, 206);
+  background-color: rgba(0, 0, 0, 0.182);
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px #000000;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 0.9em;
-  color: #d3c4c4;
+  background-color: rgba(0, 0, 0, 0.182);
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px #000000;
   margin-bottom: 20px;
 }
@@ -47,7 +49,7 @@ p {
 
 @media (max-width: 767px) {
   body {
-    background-image: url('../../image/bg/bg-p-2.jpg'); /* Replace with your portrait-oriented image path */
+    background-image: url('../../image/bg/bg-p.jpeg'); /* Replace with your portrait-oriented image path */
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat; /* Prevents the image from repeating */

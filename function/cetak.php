@@ -51,6 +51,7 @@ $data = mysqli_fetch_array($sql);
             position: absolute;
             top: 10px;
             left: 10px;
+            width: 120px;
         }
 
         .logo-right {
@@ -118,7 +119,7 @@ $data = mysqli_fetch_array($sql);
     <div class="container mt-5">
         <div class="card">
             <div class="card-header text-center">
-                <img src="../image/logo.png" alt="Logo" class="logo logo-left">
+                <img src="../image/logo-k.png" alt="Logo" class="logo logo-left">
                 <img src="../image/logo.png" alt="Logo" class="logo logo-right">
                 <h5>PEMERINTAH KOTA KENDARI</h5>
                 <h5>SATUAN POLISI PAMONG PRAJA</h5>
@@ -132,7 +133,11 @@ $data = mysqli_fetch_array($sql);
                 <form>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">NPMOR :</label>
-                        <div class="col-sm-8">LK/ /SET-PPNS/ /</div>
+                        <div class="col-sm-8"><?php echo $data['kode_surat']; ?></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Nama Pelapor :</label>
+                        <div class="col-sm-8"><?php echo $data['nama']; ?></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Waktu Kejadian (Hari, Tanggal) :</label>
@@ -146,19 +151,19 @@ $data = mysqli_fetch_array($sql);
                         <label class="col-sm-4 col-form-label">Apa yang terjadi :</label>
                         <div class="col-sm-8"><?php echo $data['yang_terjadi']; ?></div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Siapa:</label>
                         <div class="col-sm-8">
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">a.) Terlapor :</label>
-                                <div class="col-sm-9"><?php echo $data['terlapor']; ?></div>
+                                <div class="col-sm-9"><?php //echo $data['terlapor']; ?></div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">b.) Korban :</label>
-                                <div class="col-sm-9"><?php echo $data['korban']; ?></div>
+                                <div class="col-sm-9"><?php //echo $data['korban']; ?></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Bagaimana Terjadi :</label>
                         <div class="col-sm-8"><?php echo $data['bagaimana_terjadi']; ?></div>
@@ -167,14 +172,14 @@ $data = mysqli_fetch_array($sql);
                         <label class="col-sm-4 col-form-label">Dilaporkan pada (Hari, Tgl, Jam) :</label>
                         <div class="col-sm-8"><?php echo $data['waktu_laporan']; ?></div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Tindak Pidana :</label>
-                        <div class="col-sm-8"><?php echo $data['pidana']; ?></div>
-                    </div>
-                    <div class="form-group row">
+                        <div class="col-sm-8"><?php //echo $data['pidana']; ?></div>
+                    </div> -->
+                    <!-- <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Saksi :</label>
-                        <div class="col-sm-8"><?php echo $data['saksi']; ?></div>
-                    </div>
+                        <div class="col-sm-8"><?php //echo $data['saksi']; ?></div>
+                    </div> -->
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Uraian Kejadian :</label>
                         <div class="col-sm-8"><?php echo $data['kejadian']; ?></div>

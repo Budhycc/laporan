@@ -111,38 +111,38 @@ $status = $data['status'];
                         <th>Bagaimana Terjadi</th>
                         <td><?php echo $kejadian; ?></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>Terlapor</th>
-                        <td><?php echo $terlapor; ?></td>
+                        <td><?php //echo $terlapor; ?></td>
                     </tr>
                     <tr>
                         <th>Korban</th>
-                        <td><?php echo $korban; ?></td>
+                        <td><?php //echo $korban; ?></td>
                     </tr>
                     <tr>
                         <th>Saksi</th>
-                        <td><?php echo $saksi; ?></td>
-                    </tr>
+                        <td><?php //echo $saksi; ?></td>
+                    </tr> -->
                     <tr>
                         <th>Uraian Kejadian</th>
                         <td><?php echo $uraian; ?></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>Tindak Pidana</th>
-                        <td><?php echo $pidana; ?></td>
-                    </tr>
+                        <td><?php //echo $pidana; ?></td>
+                    </tr> -->
                     <tr>
                         <th>Nomor Telepon / WA Pelapor</th>
                         <td><?php echo $no_hp . '/' . $no_wa; ?></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>Foto KTP</th>
                         <td>
-                            <a href="image/upload/laporan/ktp/<?php echo $ktp; ?>" target="_blank">
-                                <img width="350px" src="image/upload/laporan/ktp/<?php echo $ktp; ?>" alt="Foto KTP">
+                            <a href="image/upload/laporan/ktp/<?php //echo $ktp; ?>" target="_blank">
+                                <img width="350px" src="image/upload/laporan/ktp/<?php //echo $ktp; ?>" alt="Foto KTP">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>Bukti</th>
                         <td>

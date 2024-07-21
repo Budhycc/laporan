@@ -31,9 +31,9 @@ $data = mysqli_fetch_array($sql);
                     <hr>
                     <h1>DATA DIRI</h1>
                     <div class="form-group">
-                        <label for="nik">Nik</label>
+                        <!-- <label for="nik">Nik</label> -->
                         <input type="number" class="form-control" id="nik" name="nik" minlength="16" maxlength="16"
-                            pattern="\d{1,16}" placeholder="Masukan nik Anda" value="<?php echo $data['nik']; ?>" required />
+                            pattern="\d{1,16}" placeholder="Masukan nik Anda" hidden value="<?php echo $data['nik']; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="name">Nama</label>
@@ -67,11 +67,11 @@ $data = mysqli_fetch_array($sql);
                         <input type="text" class="form-control" id="job" name="pekerjaan" value="<?php echo $data['pekerjaan']; ?>"
                             placeholder="Masukan Pekerjaan Anda" required />
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="ktp">Unggah Foto KTP</label>
                         <input type="file" class="form-control" id="ktp" name="foto_ktp" accept="image/*" required />
                         <div id="preview_ktp"></div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="hp">No HP</label>
                         <input type="number" class="form-control" id="hp" name="hp" placeholder="Masukan No HP Anda" value="<?php echo $data['no_hp']; ?>"
@@ -94,16 +94,16 @@ $data = mysqli_fetch_array($sql);
                         <input type="text" class="form-control" id="fire-location" name="lokasi" value="<?php echo $data['alamat_kejadian']; ?>"
                             placeholder="Masukan alamat kejadian" required />
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="terlapor">Terlapor</label>
-                        <input type="text" class="form-control" id="terlapor" name="terlapor" placeholder="Terlapor" value="<?php echo $data['terlapor']; ?>"
+                        <input type="text" class="form-control" id="terlapor" name="terlapor" placeholder="Terlapor" value="<?php //echo $data['terlapor']; ?>"
                             required />
                     </div>
                     <div class="form-group">
                         <label for="korban">Korban</label>
-                        <input type="text" class="form-control" id="korban" name="korban" placeholder="Korban" value="<?php echo $data['korban']; ?>"
+                        <input type="text" class="form-control" id="korban" name="korban" placeholder="Korban" value="<?php //echo $data['korban']; ?>"
                             required />
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="kejadian">Apa Yang Terjadi</label>
                         <input type="text" class="form-control" id="kejadian" name="yang_terjadi" value="<?php echo $data['yang_terjadi']; ?>"
@@ -114,14 +114,14 @@ $data = mysqli_fetch_array($sql);
                         <input type="text" class="form-control" id="bagaimana" name="kejadian" value="<?php echo $data['bagaimana_terjadi']; ?>"
                             placeholder="Bagaimana Terjadi" />
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="pidana">Tindak Pidana</label>
-                        <input type="text" class="form-control" id="pidana" name="pidana" placeholder="Tindak Pidana" value="<?php echo $data['pidana']; ?>" />
+                        <input type="text" class="form-control" id="pidana" name="pidana" placeholder="Tindak Pidana" value="<?php //echo $data['pidana']; ?>" />
                     </div>
                     <div class="form-group">
                         <label for="saksi">Saksi</label>
-                        <input type="text" class="form-control" id="saksi" name="saksi" placeholder="Saksi" value="<?php echo $data['saksi']; ?>" required />
-                    </div>
+                        <input type="text" class="form-control" id="saksi" name="saksi" placeholder="Saksi" value="<?php //echo $data['saksi']; ?>" required />
+                    </div> -->
                     <div class="form-group">
                         <label for="description">Uraian Kejadian</label>
                         <textarea class="form-control" id="description" name="uraian" rows="3"

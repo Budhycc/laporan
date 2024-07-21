@@ -50,7 +50,7 @@ include 'include/config.php';
         <a href="#" class="btn btn-danger btn-block p-4 report-button" onclick="showForm('fire')">
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="m-0">Buat Laporan</h2>
-            <img src="image/logo.png" alt="Fire Icon" />
+            <img src="image/write.png" alt="Fire Icon" />
           </div>
         </a>
       </div>
@@ -58,7 +58,7 @@ include 'include/config.php';
         <a href="#" class="btn btn-primary btn-block p-4 report-button" onclick="showForm('medical')">
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="m-0">Login Admin</h2>
-            <img src="image/logo-2.png" alt="Medical Icon" />
+            <img src="image/login.png" alt="Medical Icon" />
           </div>
         </a>
       </div>
@@ -66,7 +66,7 @@ include 'include/config.php';
         <a href="#" class="btn btn-secondary btn-block p-4 report-button" onclick="showForm('history')">
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="m-0">Cek Laporan Anda</h2>
-            <img src="image/logo-2.png" alt="History Icon" />
+            <img src="image/cek.png" alt="History Icon" />
           </div>
         </a>
       </div>
@@ -82,8 +82,7 @@ include 'include/config.php';
           <h1>DATA DIRI</h1>
           <div class="form-group">
             <label for="nik">Nik</label>
-            <input type="number" class="form-control" id="nik" name="nik" minlength="16" maxlength="16"
-              pattern="\d{1,16}" placeholder="Masukan nik Anda" required />
+            <input type="text" class="form-control" id="nik" name="nik" pattern="\d{16}" maxlength="16" placeholder="Masukan nik Anda" required oninput="validateLength(event)" onkeypress="validateKeyPress(event)" />
           </div>
           <div class="form-group">
             <label for="name">Nama</label>
@@ -110,11 +109,13 @@ include 'include/config.php';
           </div>
           <div class="form-group">
             <label for="alamat">Alamat</label>
-            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Anda" required />
+            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Anda"
+              required />
           </div>
           <div class="form-group">
             <label for="job">Pekerjaan</label>
-            <input type="text" class="form-control" id="job" name="pekerjaan" placeholder="Masukan Pekerjaan Anda" required />
+            <input type="text" class="form-control" id="job" name="pekerjaan" placeholder="Masukan Pekerjaan Anda"
+              required />
           </div>
           <!-- <div class="form-group">
             <label for="ktp">Unggah Foto KTP</label>
@@ -150,7 +151,8 @@ include 'include/config.php';
           </div> -->
           <div class="form-group">
             <label for="kejadian">Apa Yang Terjadi</label>
-            <input type="text" class="form-control" id="kejadian" name="yang_terjadi" placeholder="Yang Terjadi" required />
+            <input type="text" class="form-control" id="kejadian" name="yang_terjadi" placeholder="Yang Terjadi"
+              required />
           </div>
           <div class="form-group">
             <label for="bagaimana">Bagaimana Terjadi</label>
@@ -166,8 +168,8 @@ include 'include/config.php';
           </div> -->
           <div class="form-group">
             <label for="description">Uraian Kejadian</label>
-            <textarea class="form-control" id="description" name="uraian" rows="3"
-              placeholder="Masukan laporan anda" required></textarea>
+            <textarea class="form-control" id="description" name="uraian" rows="3" placeholder="Masukan laporan anda"
+              required></textarea>
           </div>
           <div class="form-group">
             <label for="fire-upload">Unggah Foto Bukti Laporan</label>
@@ -205,8 +207,8 @@ include 'include/config.php';
         <form method="POST" action="view.php">
           <div class="form-group">
             <label for="nik">Nik</label>
-            <input type="number" class="form-control" minlength="1" maxlength="16" pattern="\d{1,16}" required name="nik"
-              placeholder="Masukan Nik">
+            <input type="number" class="form-control" minlength="1" maxlength="16" pattern="\d{1,16}" required
+              name="nik" placeholder="Masukan Nik">
           </div>
           <button type="submit" name="cek" class="btn btn-primary btn-block">Cek laporan</button>
         </form>
@@ -218,6 +220,28 @@ include 'include/config.php';
   </div>
 
   <script>
+    function validateLength(event) {
+      var input = event.target;
+      if (input.value.length > 16) {
+        input.value = input.value.slice(0, 16);
+      }
+    }
+
+    function validateKeyPress(event) {
+      var charCode = (event.which) ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+      }
+    }
+
+    function validateForm(event) {
+      var input = document.getElementById('nik');
+      if (input.value.length !== 16) {
+        event.preventDefault();
+        alert("NIK must be exactly 16 digits.");
+      }
+    }
+
     function showForm(formType) {
       document.getElementById("main-menu").classList.add("d-none");
       document.querySelectorAll(".report-form").forEach((form) => {
