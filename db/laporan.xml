@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.1
+- https://www.phpmyadmin.net
+-
+- Host: localhost:3306
+- Generation Time: Jun 30, 2024 at 10:11 AM
+- Server version: 8.0.30
+- PHP Version: 7.4.33
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="laporan" collation="utf8mb4_0900_ai_ci" charset="utf8mb4">
+            <pma:table name="laporan">
+                CREATE TABLE `laporan` (
+                  `id_laporan` int NOT NULL AUTO_INCREMENT,
+                  `nik` varchar(20) NOT NULL,
+                  `nama` varchar(255) NOT NULL,
+                  `tempat_lahir` varchar(255) NOT NULL,
+                  `tanggal_lahir` date NOT NULL,
+                  `jenis_kelamin` varchar(20) NOT NULL,
+                  `alamat` varchar(255) NOT NULL,
+                  `pekerjaan` varchar(255) NOT NULL,
+                  `ktp` varchar(255) NOT NULL,
+                  `no_hp` varchar(20) NOT NULL,
+                  `no_wa` varchar(20) NOT NULL,
+                  `tanggal_kejadian` date NOT NULL,
+                  `alamat_kejadian` varchar(255) NOT NULL,
+                  `terlapor` varchar(255) NOT NULL,
+                  `korban` varchar(255) NOT NULL,
+                  `yang_terjadi` varchar(255) NOT NULL,
+                  `bagaimana_terjadi` varchar(255) NOT NULL,
+                  `saksi` varchar(255) NOT NULL,
+                  `kejadian` varchar(255) NOT NULL,
+                  `bukti` varchar(255) NOT NULL,
+                  `status` varchar(20) NOT NULL,
+                  PRIMARY KEY (`id_laporan`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id_users` int NOT NULL AUTO_INCREMENT,
+                  `username` varchar(255) NOT NULL,
+                  `password` varchar(255) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `nama_user` varchar(255) NOT NULL,
+                  PRIMARY KEY (`id_users`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'laporan'
+    -->
+    <database name="laporan">
+        <!-- Table laporan -->
+        <table name="laporan">
+            <column name="id_laporan">1</column>
+            <column name="nik">1</column>
+            <column name="nama">1</column>
+            <column name="tempat_lahir">1</column>
+            <column name="tanggal_lahir">2024-06-14</column>
+            <column name="jenis_kelamin">1</column>
+            <column name="alamat">1</column>
+            <column name="pekerjaan">1</column>
+            <column name="ktp">sFU0W9GW64Yj70pElql90dd64411-33b6-4760-a3b3-ed0cfef80f03.jpeg</column>
+            <column name="no_hp">1</column>
+            <column name="no_wa">1</column>
+            <column name="tanggal_kejadian">2024-06-21</column>
+            <column name="alamat_kejadian">1</column>
+            <column name="terlapor">1</column>
+            <column name="korban">1</column>
+            <column name="yang_terjadi">1</column>
+            <column name="bagaimana_terjadi">1</column>
+            <column name="saksi">1</column>
+            <column name="kejadian">1</column>
+            <column name="bukti">sFU0W9GW64Yj70pElql98b0c04a5-e85b-4d58-89a0-4dfc6eabd7d2.jpeg</column>
+            <column name="status">diproses</column>
+        </table>
+        <!-- Table users -->
+        <table name="users">
+            <column name="id_users">1</column>
+            <column name="username">budi</column>
+            <column name="password">12345</column>
+            <column name="email">budi@email.com</column>
+            <column name="nama_user">budi</column>
+        </table>
+    </database>
+</pma_xml_export>

@@ -1,0 +1,55 @@
+body {
+  background-color: #ffffff;
+  background-image: url('../../image/bg/bg-l-2.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+
+h1 {
+  font-size: 1.5em;
+  color: rgb(223, 206, 206);
+  text-shadow: 2px 2px #000000;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.9em;
+  color: #d3c4c4;
+  text-shadow: 2px 2px #000000;
+  margin-bottom: 20px;
+}
+
+.report-button h2 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.report-button img {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .report-button h2 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url('../../image/bg/bg-p-2.jpg'); /* Replace with your portrait-oriented image path */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+}
