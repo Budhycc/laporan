@@ -74,12 +74,12 @@ $data = mysqli_fetch_array($sql);
                     </div> -->
                     <div class="form-group">
                         <label for="hp">No HP</label>
-                        <input type="number" class="form-control" id="hp" name="hp" placeholder="Masukan No HP Anda" value="<?php echo $data['no_hp']; ?>"
+                        <input type="text" pattern="[0-9]{12}"  class="form-control" id="hp" name="hp" placeholder="Masukan No HP Anda" value="<?php echo $data['no_hp']; ?>"
                             required />
                     </div>
                     <div class="form-group">
                         <label for="wa">No WA (+62)</label>
-                        <input type="number" class="form-control" id="wa" name="wa" placeholder="Masukan No WA Anda" value="<?php echo $data['no_wa']; ?>"
+                        <input type="text" pattern="[0-9]{12}" class="form-control" id="wa" name="wa" placeholder="Masukan No WA Anda" value="<?php echo $data['no_wa']; ?>"
                             required />
                     </div>
                     <hr>
@@ -125,7 +125,7 @@ $data = mysqli_fetch_array($sql);
                     <div class="form-group">
                         <label for="description">Uraian Kejadian</label>
                         <textarea class="form-control" id="description" name="uraian" rows="3"
-                            placeholder="Masukan laporan anda" value="<?php echo $data['kejadian']; ?>" required></textarea>
+                            placeholder="Masukan laporan anda" required><?php echo $data['kejadian']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="fire-upload">Unggah Foto Bukti Laporan</label>

@@ -119,11 +119,11 @@ if (isset($_POST['laporan'])) {
 
     if ($sql) {
         //echo 'yes';
-        echo "<script>alert('Edit Sukses');document.location.href='../view.php?no=$id';</script>";
+        echo "<script>alert('Edit Sukses');document.location.href='../view.php?no=$nik';</script>";
 
     } else {
         //echo 'no';
-        echo "<script>alert('Edit Gagal');document.location.href='../view.php?no=$id';</script>";
+        echo "<script>alert('Edit Gagal');document.location.href='../view.php?no=$nik';</script>";
     }
 } else if (isset($_GET['delete_a'])) {
     $id = $_GET['delete_a'];
