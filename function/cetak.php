@@ -18,6 +18,16 @@ INNER JOIN laporan ON laporan.id_laporan = cetak.id_laporan
 WHERE cetak.id_laporan = '$id'";
 $sql = mysqli_query($connect, $query);
 $data = mysqli_fetch_array($sql);
+
+
+$tgl1 = $data['tanggal_kejadian'];
+$newDate1 = date("d-m-Y", strtotime($tgl1));  
+
+$tgl2 = $data['waktu_laporan'];
+$newDate2 = date("d-m-Y", strtotime($tgl2));  
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +76,23 @@ $data = mysqli_fetch_array($sql);
 
         .form-group .col-form-label {
             font-weight: bold;
+        }
+
+        .signature {
+            position: relative;
+            text-align: right;
+            margin-top: 350px;
+            margin-right: 20px;
+        }
+
+        .tab-atas {
+            display: inline-block;
+            margin-left: 60px;  /* for e.g: value = 40px*/
+        }
+
+        .tab {
+            display: inline-block;
+            margin-left: 177px;  /* for e.g: value = 40px*/
         }
 
         @media print {
@@ -141,7 +168,7 @@ $data = mysqli_fetch_array($sql);
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Waktu Kejadian (Hari, Tanggal) :</label>
-                        <div class="col-sm-8"><?php echo $data['tanggal_kejadian']; ?></div>
+                        <div class="col-sm-8"><?php echo $tanggal_kejadian = date("d-m-Y", strtotime($data['tanggal_kejadian']));  ?></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Tempat Kejadian :</label>
@@ -151,40 +178,26 @@ $data = mysqli_fetch_array($sql);
                         <label class="col-sm-4 col-form-label">Apa yang terjadi :</label>
                         <div class="col-sm-8"><?php echo $data['yang_terjadi']; ?></div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Siapa:</label>
-                        <div class="col-sm-8">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">a.) Terlapor :</label>
-                                <div class="col-sm-9"><?php //echo $data['terlapor']; ?></div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">b.) Korban :</label>
-                                <div class="col-sm-9"><?php //echo $data['korban']; ?></div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Bagaimana Terjadi :</label>
                         <div class="col-sm-8"><?php echo $data['bagaimana_terjadi']; ?></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Dilaporkan pada (Hari, Tgl, Jam) :</label>
-                        <div class="col-sm-8"><?php echo $data['waktu_laporan']; ?></div>
+                        <div class="col-sm-8"><?php echo $waktu_laporan = date("d-m-Y", strtotime($data['waktu_laporan'])); ?></div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Tindak Pidana :</label>
-                        <div class="col-sm-8"><?php //echo $data['pidana']; ?></div>
-                    </div> -->
-                    <!-- <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Saksi :</label>
-                        <div class="col-sm-8"><?php //echo $data['saksi']; ?></div>
-                    </div> -->
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Uraian Kejadian :</label>
                         <div class="col-sm-8"><?php echo $data['kejadian']; ?></div>
                     </div>
                 </form>
+                <div class="signature">
+                    <p>Kendari, <?php echo date('d-m-Y'); ?><span class="tab-atas"></span></p>
+                    </br>
+                    </br>
+                    <p>_______________________</p>
+                    <p>Nip:<span class="tab"></p>
+                </div>
             </div>
         </div>
     </div>

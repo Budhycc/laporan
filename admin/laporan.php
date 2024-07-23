@@ -19,7 +19,7 @@ if ($_SESSION == NULL) {
     $data = mysqli_fetch_array($sql);
 
     $nik = $data['nik'];
-    $waktu_laporan = $data['waktu_laporan'];
+    $waktu_laporan = date("d-m-Y", strtotime($data['waktu_laporan']));  
     $nama = $data['nama'];
     $tempat_lahir = $data['tempat_lahir'];
     $tanggal_lahir = $data['tanggal_lahir'];
@@ -29,7 +29,7 @@ if ($_SESSION == NULL) {
     $ktp = $data['ktp'];
     $no_hp = $data['no_hp'];
     $no_wa = $data['no_wa'];
-    $tanggal_kejadian = $data['tanggal_kejadian'];
+    $tanggal_kejadian = date("d-m-Y", strtotime($data['tanggal_kejadian']));  
     $lokasi = $data['alamat_kejadian'];
     $terlapor = $data['terlapor'];
     $korban = $data['korban'];
@@ -40,6 +40,7 @@ if ($_SESSION == NULL) {
     $uraian = $data['kejadian'];
     $bukti = $data['bukti'];
     $status = $data['status'];
+
     ?>
     <!DOCTYPE html>
     <html lang="en">

@@ -55,7 +55,7 @@ $row_number = $start_number;
 while ($data = mysqli_fetch_assoc($sql)) {
     $response['table'] .= "<tr>";
     $response['table'] .= "<td>" . $row_number . "</td>";
-    $response['table'] .= "<td>" . $data['waktu_laporan'] . "</td>";
+    $response['table'] .= "<td>" . $waktu_laporan = date("d-m-Y", strtotime($data['waktu_laporan'])) . "</td>";
     $response['table'] .= "<td>" . $data['nik'] . "</td>";
     $response['table'] .= "<td>" . $data['nama'] . "</td>";
     $response['table'] .= "<td>" . $data['yang_terjadi'] . "</td>";
